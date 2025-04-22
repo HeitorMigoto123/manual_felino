@@ -138,11 +138,21 @@
     }
   </style>
   <script>
-    // Função que simula o ranking de súditos
-    const suditos = [];
+    // Função para carregar os dados do localStorage
+    function carregarSuditos() {
+      let suditosSalvos = localStorage.getItem("suditos");
+      return suditosSalvos ? JSON.parse(suditosSalvos) : [];
+    }
 
+    // Função para salvar os dados no localStorage
+    function salvarSuditos(suditos) {
+      localStorage.setItem("suditos", JSON.stringify(suditos));
+    }
+
+    // Função que simula o ranking de súditos
     function cadastrarSudiToImpério(nome, gato, mensagem) {
       const dataAdesao = new Date();
+      const suditos = carregarSuditos();
       suditos.push({ nome, gato, mensagem, dataAdesao });
 
       // Ordena os súditos por data de adesão (mais antigos primeiro)
@@ -150,6 +160,7 @@
 
       // Limita a 3 primeiros
       const topSuditos = suditos.slice(0, 3);
+      salvarSuditos(suditos);
       mostrarTabelaSuditos(topSuditos);
     }
 
@@ -176,9 +187,14 @@
       document.getElementById("tabela-suditos").innerHTML = tabelaHTML;
     }
 
-    function miadoEmergencia() {
-      alert("MIAAAAAUUUU! (você acionou o botão de emergência 🐾)");
+    // Função de inicialização ao carregar a página
+    function inicializar() {
+      const suditos = carregarSuditos();
+      const topSuditos = suditos.slice(0, 3);
+      mostrarTabelaSuditos(topSuditos);
     }
+
+    window.onload = inicializar; // Chama a inicialização quando a página carrega
   </script>
 </head>
 <body>
@@ -226,7 +242,7 @@
         <li>Treine sua audição para distinguir miados reais de falsos alarmes.</li>
         <li>Aprenda a dormir em posições desconfortáveis para não incomodar um gato.</li>
       </ul>
-      <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4cd9c?auto=format&fit=crop&w=900&q=80" alt="Gato dormindo" class="cat-img">
+      <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4cd9f?auto=format&fit=crop&w=900&q=80" alt="Gato dormindo" class="cat-img">
     </section>
 
     <div class="btn-container">
@@ -271,6 +287,7 @@
   </footer>
 </body>
 </html>
+
 
 
 

@@ -112,8 +112,70 @@
       border-color: #ff7675;
       box-shadow: 0 0 8px rgba(255,118,117,0.6);
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    table, th, td {
+      border: 2px solid #f7b7a3;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #ff7675;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f1f1;
+    }
   </style>
   <script>
+    // Função que simula o ranking de súditos
+    const suditos = [];
+
+    function cadastrarSudiToImpério(nome, gato, mensagem) {
+      const dataAdesao = new Date();
+      suditos.push({ nome, gato, mensagem, dataAdesao });
+
+      // Ordena os súditos por data de adesão (mais antigos primeiro)
+      suditos.sort((a, b) => a.dataAdesao - b.dataAdesao);
+
+      // Limita a 3 primeiros
+      const topSuditos = suditos.slice(0, 3);
+      mostrarTabelaSuditos(topSuditos);
+    }
+
+    // Função para mostrar a tabela
+    function mostrarTabelaSuditos(topSuditos) {
+      let tabelaHTML = `<table>
+                          <tr>
+                            <th>Rank</th>
+                            <th>Nome</th>
+                            <th>Gato Favorito</th>
+                            <th>Mensagem</th>
+                          </tr>`;
+
+      topSuditos.forEach((sudito, index) => {
+        tabelaHTML += `<tr>
+                        <td>${index + 1}</td>
+                        <td>${sudito.nome}</td>
+                        <td>${sudito.gato}</td>
+                        <td>${sudito.mensagem}</td>
+                      </tr>`;
+      });
+
+      tabelaHTML += `</table>`;
+      document.getElementById("tabela-suditos").innerHTML = tabelaHTML;
+    }
+
     function miadoEmergencia() {
       alert("MIAAAAAUUUU! (você acionou o botão de emergência 🐾)");
     }
@@ -174,9 +236,13 @@
     <section id="formulario">
       <h2>Recrutamento Real</h2>
       <p>Junte-se ao Império dos Gatos. Prometa sua lealdade ao Gato Supremo!</p>
-      <form>
+      <form onsubmit="event.preventDefault(); cadastrarSudiToImpério(
+          document.getElementById('nome').value, 
+          document.getElementById('gato').value, 
+          document.getElementById('mensagem').value
+        );">
         <label for="nome">Nome do súdito:</label><br>
-        <input type="text" id="nome" name="nome" placeholder="Ex: Heitor Miado"><br><br>
+        <input type="text" id="nome" name="nome" placeholder="Ex: Flavinho da Gtaiada"><br><br>
 
         <label for="gato">Tipo de gato favorito:</label><br>
         <select id="gato" name="gato">
@@ -192,6 +258,12 @@
         <button type="submit" class="btn">Enviar juramento 🐾</button>
       </form>
     </section>
+
+    <!-- Tabela de Súditos -->
+    <section id="ranking">
+      <h2>Top 3 Súditos mais antigos</h2>
+      <div id="tabela-suditos"></div>
+    </section>
   </main>
 
   <footer>
@@ -199,6 +271,7 @@
   </footer>
 </body>
 </html>
+
 
 
 

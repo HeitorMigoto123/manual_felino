@@ -91,6 +91,27 @@
       font-size: 0.9em;
       color: white;
     }
+
+    form {
+      margin-top: 20px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 2px solid #f7b7a3;
+      border-radius: 10px;
+      box-sizing: border-box;
+      font-size: 1em;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: #ff7675;
+      box-shadow: 0 0 8px rgba(255,118,117,0.6);
+    }
   </style>
   <script>
     function miadoEmergencia() {
@@ -109,6 +130,7 @@
     <a href="#moeda">Moeda</a>
     <a href="#comportamento">Comportamento</a>
     <a href="#sobrevivencia">Sobrevivência</a>
+    <a href="#formulario">Recrutamento</a>
     <a href="https://pt.wikipedia.org/wiki/Gato" target="_blank">Wikipedia</a>
   </nav>
 
@@ -148,6 +170,28 @@
     <div class="btn-container">
       <button class="btn" onclick="miadoEmergencia()">Miado de Emergência 🐱</button>
     </div>
+
+    <section id="formulario">
+      <h2>Recrutamento Real</h2>
+      <p>Junte-se ao Império dos Gatos. Prometa sua lealdade ao Gato Supremo!</p>
+      <form>
+        <label for="nome">Nome do súdito:</label><br>
+        <input type="text" id="nome" name="nome" placeholder="Ex: Heitor Miado"><br><br>
+
+        <label for="gato">Tipo de gato favorito:</label><br>
+        <select id="gato" name="gato">
+          <option value="siames">Siames</option>
+          <option value="persa">Persa</option>
+          <option value="sphynx">Sphynx</option>
+          <option value="vira-lata">Vira-lata glorioso</option>
+        </select><br><br>
+
+        <label for="mensagem">Mensagem de adoração:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" cols="40" placeholder="Oh supremo felino..."></textarea><br><br>
+
+        <button type="submit" class="btn">Enviar juramento 🐾</button>
+      </form>
+    </section>
   </main>
 
   <footer>
@@ -155,5 +199,6 @@
   </footer>
 </body>
 </html>
+
 
 

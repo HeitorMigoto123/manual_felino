@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8" />
   <title>Império dos Gatos</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <style>
     body {
       font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -21,85 +22,53 @@
       text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
     }
 
-    header h1 {
-      font-size: 3em;
-      margin: 0;
-    }
+    header h1 { font-size: 3em; margin: 0; }
 
     nav {
       background-color: #f7b7a3;
-      padding: 15px;
+      padding: 12px;
       text-align: center;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 10px;
       color: white;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.1em;
+      font-size: 1em;
     }
 
-    main {
-      padding: 40px 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+    main { padding: 30px 20px; max-width: 1000px; margin: auto; }
 
     section {
-      margin-bottom: 50px;
+      margin-bottom: 30px;
       background-color: #fff;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
-    h2 {
-      color: #e17055;
-    }
+    h2 { color: #e17055; margin-top: 0; }
 
-    img.cat-img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 10px;
-    }
-
-    .btn-container {
-      text-align: center;
-      margin: 40px 0;
-    }
+    .cat-img { max-width: 100%; border-radius: 10px; margin-top: 10px; }
 
     .btn {
       background-color: #ff7675;
       border: none;
-      padding: 15px 30px;
-      font-size: 1.1em;
+      padding: 12px 20px;
+      font-size: 1em;
       color: white;
-      border-radius: 30px;
+      border-radius: 26px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: 0.2s;
     }
 
-    .btn:hover {
-      background-color: #d63031;
-    }
+    .btn:hover { background-color: #d63031; }
 
-    footer {
-      background-color: #f7b7a3;
-      text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
-      color: white;
-    }
-
-    form {
-      margin-top: 20px;
-    }
-
-    input, select, textarea {
+    form input, form select, form textarea {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
+      margin-top: 6px;
       border: 2px solid #f7b7a3;
       border-radius: 10px;
       box-sizing: border-box;
@@ -107,113 +76,54 @@
       font-family: inherit;
     }
 
-    input:focus, textarea:focus, select:focus {
-      outline: none;
-      border-color: #ff7675;
-      box-shadow: 0 0 8px rgba(255,118,117,0.6);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    table, th, td {
-      border: 2px solid #f7b7a3;
-    }
-
-    th, td {
-      padding: 10px;
-      text-align: center;
-    }
-
-    th {
-      background-color: #ff7675;
-      color: white;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f1f1f1;
-    }
-
-    .wiki-links {
-      margin-top: 20px;
-      text-align: center;
-    }
+    .wiki-links { margin-top: 18px; text-align: center; }
 
     .wiki-links a {
       display: inline-block;
-      margin: 5px 10px;
+      margin: 6px 10px;
       color: #2d3436;
       text-decoration: none;
       font-weight: bold;
     }
+    .wiki-links a:hover { color: #d63031; text-decoration: underline; }
 
-    .wiki-links a:hover {
-      color: #d63031;
-      text-decoration: underline;
+    /* Tabela de súditos */
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    table, th, td { border: 2px solid #f7b7a3; }
+    th, td { padding: 10px; text-align: center; }
+    th { background-color: #ff7675; color: white; }
+    tr:nth-child(even){ background:#f1f1f1; }
+
+    /* Loja */
+    .shop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .shop-item {
+      padding: 12px;
+      border-radius: 10px;
+      border: 2px dashed #f7b7a3;
+      background: #fffdfb;
+    }
+    .shop-header { display:flex; align-items:center; justify-content:space-between; }
+    .currency {
+      font-size: 1.2em;
+      font-weight: bold;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+    .can-icon {
+      width:22px; height:22px; display:inline-block;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="18" height="14" x="3" y="5" rx="2" ry="2" fill="%23ffb347"/><rect width="18" height="2" x="3" y="3" rx="1" ry="1" fill="%23e67e22"/></svg>') no-repeat center/contain;
+    }
+
+    .small { font-size:0.9em; color:#666; }
+    @media (max-width:700px){
+      .shop { grid-template-columns: 1fr; }
     }
   </style>
-  <script>
-    // Função para carregar os dados do localStorage
-    function carregarSuditos() {
-      let suditosSalvos = localStorage.getItem("suditos");
-      return suditosSalvos ? JSON.parse(suditosSalvos) : [];
-    }
-
-    // Função para salvar os dados no localStorage
-    function salvarSuditos(suditos) {
-      localStorage.setItem("suditos", JSON.stringify(suditos));
-    }
-
-    // Função que simula o ranking de súditos
-    function cadastrarSudiToImpério(nome, gato, mensagem) {
-      const dataAdesao = new Date();
-      const suditos = carregarSuditos();
-      suditos.push({ nome, gato, mensagem, dataAdesao });
-
-      // Ordena os súditos por data de adesão (mais antigos primeiro)
-      suditos.sort((a, b) => a.dataAdesao - b.dataAdesao);
-
-      // Limita a 3 primeiros
-      const topSuditos = suditos.slice(0, 3);
-      salvarSuditos(suditos);
-      mostrarTabelaSuditos(topSuditos);
-    }
-
-    // Função para mostrar a tabela
-    function mostrarTabelaSuditos(topSuditos) {
-      let tabelaHTML = `<table>
-                          <tr>
-                            <th>Rank</th>
-                            <th>Nome</th>
-                            <th>Gato Favorito</th>
-                            <th>Mensagem</th>
-                          </tr>`;
-
-      topSuditos.forEach((sudito, index) => {
-        tabelaHTML += `<tr>
-                        <td>${index + 1}</td>
-                        <td>${sudito.nome}</td>
-                        <td>${sudito.gato}</td>
-                        <td>${sudito.mensagem}</td>
-                      </tr>`;
-      });
-
-      tabelaHTML += `</table>`;
-      document.getElementById("tabela-suditos").innerHTML = tabelaHTML;
-    }
-
-    // Função de inicialização ao carregar a página
-    function inicializar() {
-      const suditos = carregarSuditos();
-      const topSuditos = suditos.slice(0, 3);
-      mostrarTabelaSuditos(topSuditos);
-    }
-
-    window.onload = inicializar; // Chama a inicialização quando a página carrega
-  </script>
 </head>
 <body>
   <header>
@@ -222,11 +132,12 @@
   </header>
 
   <nav>
-    <a href="#leis">Leis Gatais</a>
+    <a href="#leis">Leis</a>
     <a href="#moeda">Moeda</a>
-    <a href="#comportamento">Comportamento</a>
+    <a href="#comportamento">Comport.</a>
     <a href="#sobrevivencia">Sobrevivência</a>
     <a href="#formulario">Recrutamento</a>
+    <a href="#loja">Loja</a>
     <a href="https://pt.wikipedia.org/wiki/Gato" target="_blank">Wikipedia</a>
   </nav>
 
@@ -243,8 +154,17 @@
 
     <section id="moeda">
       <h2>Moeda Oficial</h2>
-      <p>A economia felina gira em torno de sachês de atum, petiscos premium e caixas de papelão vintage.</p>
-      <img src="https://images.unsplash.com/photo-1596339482593-3c1d6306c3a4?auto=format&fit=crop&w=900&q=80" alt="Gato com moedas" class="cat-img">
+      <p>A economia felina gira em torno de <strong>latas de atum</strong>. Você ganha latas automaticamente — isso é um jogo idle disfarçado de benevolência felina.</p>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+        <div class="currency" aria-live="polite">
+          <span class="can-icon" aria-hidden="true"></span>
+          <span id="cans-count">0</span> latas de atum
+        </div>
+        <div class="small">Taxa atual: <span id="cans-rate">0</span> latas/seg</div>
+        <div style="margin-left:auto;">
+          <button class="btn" onclick="resetLoja()" title="Resetar loja e latas (apagar localStorage)">Resetar loja</button>
+        </div>
+      </div>
     </section>
 
     <section id="comportamento">
@@ -263,16 +183,16 @@
       <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4cd9f?auto=format&fit=crop&w=900&q=80" alt="Gato dormindo" class="cat-img">
     </section>
 
+    <div style="text-align:center;margin:14px 0;">
+      <button class="btn" onclick="miadoEmergencia()">Miado de Emergência 🐱</button>
+    </div>
+
     <section id="formulario">
       <h2>Recrutamento Real</h2>
       <p>Junte-se ao Império dos Gatos. Prometa sua lealdade ao Gato Supremo!</p>
-      <form onsubmit="event.preventDefault(); cadastrarSudiToImpério(
-          document.getElementById('nome').value, 
-          document.getElementById('gato').value, 
-          document.getElementById('mensagem').value
-        );">
+      <form id="recruta-form">
         <label for="nome">Nome do súdito:</label><br>
-        <input type="text" id="nome" name="nome" placeholder="Ex: Flavinho da Gtaiada"><br><br>
+        <input type="text" id="nome" name="nome" placeholder="Ex: Flavinho da Gtaiada" required><br><br>
 
         <label for="gato">Tipo de gato favorito:</label><br>
         <select id="gato" name="gato">
@@ -290,7 +210,7 @@
         </select><br><br>
 
         <label for="mensagem">Mensagem de adoração:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="4" cols="40" placeholder="Oh supremo felino..."></textarea><br><br>
+        <textarea id="mensagem" name="mensagem" rows="4" cols="40" placeholder="Oh supremo felino..." required></textarea><br><br>
 
         <button type="submit" class="btn">Enviar juramento 🐾</button>
       </form>
@@ -300,6 +220,21 @@
       <h2>Top 3 Súditos mais antigos</h2>
       <div id="tabela-suditos"></div>
     </section>
+
+    <!-- LOJA -->
+    <section id="loja">
+      <h2>Loja do Império — Compre com latas de atum</h2>
+      <p class="small">Ganhe 1 lata/seg por padrão. Compre itens para aumentar sua taxa de ganho.</p>
+
+      <div class="shop" id="shop-grid">
+        <!-- itens serão inseridos por JS -->
+      </div>
+
+      <div style="margin-top:12px;" class="small">
+        <strong>Dica:</strong> os ganhos continuam no seu navegador mesmo enquanto você sai — atualizamos com base no tempo ausente.
+      </div>
+    </section>
+
   </main>
 
   <footer>
@@ -308,16 +243,237 @@
       <h3>Saiba mais sobre gatos 🐾</h3>
       <a href="https://pt.wikipedia.org/wiki/Gato" target="_blank">Gato doméstico</a>
       <a href="https://pt.wikipedia.org/wiki/Felis_silvestris_catus" target="_blank">Felis catus</a>
-      <a href="https://pt.wikipedia.org/wiki/Raças_de_gato" target="_blank">Raças de gatos</a>
-      <a href="https://pt.wikipedia.org/wiki/Comportamento_do_gato_doméstico" target="_blank">Comportamento felino</a>
+      <a href="https://pt.wikipedia.org/wiki/Ra%C3%A7as_de_gato" target="_blank">Raças de gatos</a>
+      <a href="https://pt.wikipedia.org/wiki/Comportamento_do_gato_dom%C3%A9stico" target="_blank">Comportamento felino</a>
       <a href="https://pt.wikipedia.org/wiki/Gatos_na_cultura" target="_blank">Gatos na cultura</a>
     </div>
   </footer>
+
+  <script>
+    /* -------------------------
+       Persistência e Estado da Loja (localStorage)
+       ------------------------- */
+
+    const LOJA_KEY = 'imperio_loja_state_v1'; // versão para facilitar resets futuros
+
+    // Itens da loja (id, nome, custo inicial, incremento de taxa por item)
+    const SHOP_ITEMS = [
+      { id: 'arranhador', name: 'Arranhador Real', cost: 15, rate: 1 },
+      { id: 'servo', name: 'Servo Felino', cost: 60, rate: 5 },
+      { id: 'altar', name: 'Altar de Ronrons', cost: 250, rate: 25 },
+      { id: 'fabrica', name: 'Fábrica de Sachês', cost: 1200, rate: 150 }
+    ];
+
+    // Estado default
+    const defaultState = {
+      cans: 0,         // latas de atum atuais
+      rate: 1,         // latas por segundo
+      items: {},       // counts por item id
+      lastTs: Date.now()
+    };
+
+    // Carrega estado (ou cria padrão)
+    function loadState(){
+      const raw = localStorage.getItem(LOJA_KEY);
+      if(!raw) {
+        const s = {...defaultState};
+        SHOP_ITEMS.forEach(it => s.items[it.id]=0);
+        return s;
+      }
+      try {
+        const parsed = JSON.parse(raw);
+        // garantir campos
+        SHOP_ITEMS.forEach(it => { if(!(it.id in parsed.items)) parsed.items[it.id]=0; });
+        parsed.rate = parsed.rate ?? 1;
+        parsed.cans = parsed.cans ?? 0;
+        parsed.lastTs = parsed.lastTs ?? Date.now();
+        return parsed;
+      } catch(e){
+        console.warn('Erro ao ler state, resetando', e);
+        localStorage.removeItem(LOJA_KEY);
+        return loadState();
+      }
+    }
+
+    function saveState(s){
+      s.lastTs = Date.now();
+      localStorage.setItem(LOJA_KEY, JSON.stringify(s));
+    }
+
+    // Inicialização
+    let state = loadState();
+
+    // Ao carregar, computa latas acumuladas enquanto ausente
+    function applyOfflineGain(){
+      const now = Date.now();
+      const elapsedMs = now - (state.lastTs || now);
+      const elapsedSec = Math.floor(elapsedMs / 1000);
+      if(elapsedSec > 0){
+        const gained = elapsedSec * state.rate;
+        state.cans += gained;
+      }
+      state.lastTs = now;
+      saveState(state);
+    }
+
+    applyOfflineGain();
+
+    /* -------------------------
+       Atualização periódica (1s)
+       ------------------------- */
+    function startTicker(){
+      updateUI();
+      setInterval(()=> {
+        state.cans += state.rate;
+        state.lastTs = Date.now();
+        saveState(state);
+        updateUI();
+      }, 1000);
+    }
+
+    /* -------------------------
+       UI: loja e contadores
+       ------------------------- */
+    function formatNum(n){ return Math.floor(n); }
+
+    function updateUI(){
+      document.getElementById('cans-count').textContent = formatNum(state.cans);
+      document.getElementById('cans-rate').textContent = formatNum(state.rate);
+      renderShop();
+    }
+
+    function renderShop(){
+      const grid = document.getElementById('shop-grid');
+      grid.innerHTML = '';
+      SHOP_ITEMS.forEach(item => {
+        const count = state.items[item.id] || 0;
+        // cost scaling: cost * (1.15^count) rounded
+        const cost = Math.max(1, Math.floor(item.cost * Math.pow(1.15, count)));
+        const div = document.createElement('div');
+        div.className = 'shop-item';
+        div.innerHTML = `
+          <div class="shop-header">
+            <strong>${item.name}</strong>
+            <div class="small">x${count}</div>
+          </div>
+          <div style="margin:8px 0;" class="small">Ganha +${item.rate} lata(s)/seg por item</div>
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:8px">
+            <div class="small"><span class="can-icon" aria-hidden="true"></span> <strong>${cost}</strong> latas</div>
+            <div>
+              <button class="btn" onclick="buyItem('${item.id}', ${cost})" ${state.cans < cost ? 'disabled' : ''}>Comprar</button>
+            </div>
+          </div>
+        `;
+        grid.appendChild(div);
+      });
+    }
+
+    // Compra item
+    function buyItem(itemId, cost){
+      if(state.cans < cost) return alert('Você não tem latas suficientes!');
+      const item = SHOP_ITEMS.find(i=>i.id===itemId);
+      if(!item) return;
+      state.cans -= cost;
+      state.items[itemId] = (state.items[itemId]||0) + 1;
+      state.rate += item.rate;
+      saveState(state);
+      updateUI();
+    }
+
+    // Reset (para desenvolvimento)
+    function resetLoja(){
+      if(!confirm('Resetar loja e dados da loja? Isso apagará latas e compras.')) return;
+      localStorage.removeItem(LOJA_KEY);
+      state = loadState();
+      // inicializa counts
+      SHOP_ITEMS.forEach(it => state.items[it.id] = 0);
+      state.cans = 0;
+      state.rate = 1;
+      state.lastTs = Date.now();
+      saveState(state);
+      updateUI();
+    }
+
+    /* -------------------------
+       Recrutamento e ranking (súditos)
+       - usa localStorage separadamente (key 'suditos')
+       ------------------------- */
+
+    const SUDITOS_KEY = 'suditos';
+
+    function carregarSuditos() {
+      let suditosSalvos = localStorage.getItem(SUDITOS_KEY);
+      return suditosSalvos ? JSON.parse(suditosSalvos) : [];
+    }
+
+    function salvarSuditos(suditos) {
+      localStorage.setItem(SUDITOS_KEY, JSON.stringify(suditos));
+    }
+
+    function cadastrarSudiToImpério(nome, gato, mensagem) {
+      const dataAdesao = new Date().toISOString();
+      const suditos = carregarSuditos();
+      suditos.push({ nome, gato, mensagem, dataAdesao });
+      // Ordena por data de adesão (mais antigos primeiro)
+      suditos.sort((a, b) => new Date(a.dataAdesao) - new Date(b.dataAdesao));
+      salvarSuditos(suditos);
+      mostrarTabelaSuditos();
+      // feedback divertido
+      alert(`Juramento recebido, ${nome}! O conselho registrou sua devoção.`);
+      // limpar form
+      document.getElementById('recruta-form').reset();
+    }
+
+    function mostrarTabelaSuditos() {
+      const suditos = carregarSuditos();
+      const topSuditos = suditos.slice(0, 3);
+      let tabelaHTML = `<table>
+        <tr><th>Rank</th><th>Nome</th><th>Gato Favorito</th><th>Mensagem</th></tr>`;
+      topSuditos.forEach((sudito, index) => {
+        tabelaHTML += `<tr>
+          <td>${index+1}</td>
+          <td>${escapeHtml(sudito.nome)}</td>
+          <td>${escapeHtml(sudito.gato)}</td>
+          <td>${escapeHtml(sudito.mensagem)}</td>
+        </tr>`;
+      });
+      tabelaHTML += `</table>`;
+      document.getElementById('tabela-suditos').innerHTML = tabelaHTML;
+    }
+
+    // pequena proteção contra HTML malicioso
+    function escapeHtml(str){
+      if(!str) return '';
+      return String(str).replace(/[&<>"']/g, s => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      })[s]);
+    }
+
+    // Miado de emergência
+    function miadoEmergencia() {
+      alert("MIAAAAAUUUU! (você acionou o botão de emergência 🐾)");
+    }
+
+    /* -------------------------
+       Inicialização
+       ------------------------- */
+    window.addEventListener('load', () => {
+      // mostrar súditos
+      mostrarTabelaSuditos();
+      // aplicar ganho offline já feito acima
+      updateUI();
+      startTicker();
+
+      // hook do form de recrutamento
+      document.getElementById('recruta-form').addEventListener('submit', (e)=>{
+        e.preventDefault();
+        const nome = document.getElementById('nome').value.trim();
+        const gato = document.getElementById('gato').value;
+        const mensagem = document.getElementById('mensagem').value.trim();
+        if(!nome || !mensagem) { alert('Preencha nome e mensagem.'); return; }
+        cadastrarSudiToImpério(nome, gato, mensagem);
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
-
-

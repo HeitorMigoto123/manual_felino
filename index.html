@@ -136,6 +136,24 @@
     tr:nth-child(even) {
       background-color: #f1f1f1;
     }
+
+    .wiki-links {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .wiki-links a {
+      display: inline-block;
+      margin: 5px 10px;
+      color: #2d3436;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .wiki-links a:hover {
+      color: #d63031;
+      text-decoration: underline;
+    }
   </style>
   <script>
     // Função para carregar os dados do localStorage
@@ -245,10 +263,6 @@
       <img src="https://images.unsplash.com/photo-1583337130417-3346a1a4cd9f?auto=format&fit=crop&w=900&q=80" alt="Gato dormindo" class="cat-img">
     </section>
 
-    <div class="btn-container">
-      <button class="btn" onclick="miadoEmergencia()">Miado de Emergência 🐱</button>
-    </div>
-
     <section id="formulario">
       <h2>Recrutamento Real</h2>
       <p>Junte-se ao Império dos Gatos. Prometa sua lealdade ao Gato Supremo!</p>
@@ -266,6 +280,13 @@
           <option value="persa">Persa</option>
           <option value="sphynx">Sphynx</option>
           <option value="vira-lata">Vira-lata glorioso</option>
+          <option value="maine-coon">Maine Coon</option>
+          <option value="ragdoll">Ragdoll</option>
+          <option value="abissinio">Abissínio</option>
+          <option value="bengal">Bengal</option>
+          <option value="britanico">Britânico de pelos curtos</option>
+          <option value="birma">Birma</option>
+          <option value="malhado">Gato Malhado</option>
         </select><br><br>
 
         <label for="mensagem">Mensagem de adoração:</label><br>
@@ -275,7 +296,6 @@
       </form>
     </section>
 
-    <!-- Tabela de Súditos -->
     <section id="ranking">
       <h2>Top 3 Súditos mais antigos</h2>
       <div id="tabela-suditos"></div>
@@ -284,9 +304,18 @@
 
   <footer>
     © 2025 Império Felino – Submissão e carinho obrigatório.
+    <div class="wiki-links">
+      <h3>Saiba mais sobre gatos 🐾</h3>
+      <a href="https://pt.wikipedia.org/wiki/Gato" target="_blank">Gato doméstico</a>
+      <a href="https://pt.wikipedia.org/wiki/Felis_silvestris_catus" target="_blank">Felis catus</a>
+      <a href="https://pt.wikipedia.org/wiki/Raças_de_gato" target="_blank">Raças de gatos</a>
+      <a href="https://pt.wikipedia.org/wiki/Comportamento_do_gato_doméstico" target="_blank">Comportamento felino</a>
+      <a href="https://pt.wikipedia.org/wiki/Gatos_na_cultura" target="_blank">Gatos na cultura</a>
+    </div>
   </footer>
 </body>
 </html>
+
 
 
 
